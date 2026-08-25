@@ -20,6 +20,6 @@ describe('Authentification de sauce demo', () => {
     });
     it('login invalid', () => {
         LoginPage.Loginapp('standard_user_1','secret_sauce')
-        cy.get('[data-test="error"]').should('be.visible').and('contain','Username and password do not match any user in this service')
+        LoginPage.checkMessage().should('be.visible').and('contain','Username and password do not match any user in this service')
     });
 });
