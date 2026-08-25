@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "report:merge": "mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/report.json",
+    "report:generate": "marge cypress/reports/report.json -f report -o cypress/reports"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +15,10 @@
   "devDependencies": {
     "@cypress/grep": "^5.0.0",
     "csvtojson": "^2.0.14",
-    "cypress": "^14.5.4"
+    "cypress": "^14.5.4",
+    "mochawesome": "^8.0.1",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
   },
   "dependencies": {
     "papaparse": "^5.7.0"
